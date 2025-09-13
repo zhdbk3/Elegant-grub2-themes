@@ -69,6 +69,10 @@ while [[ $# -gt 0 ]]; do
             themes+=("${THEME_VARIANTS[3]}")
             shift
             ;;
+          nachoneko)
+            themes+=("${THEME_VARIANTS[4]}")
+            shift
+            ;;
           -*)
             break
             ;;

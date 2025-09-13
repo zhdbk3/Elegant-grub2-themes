@@ -9,7 +9,7 @@ GRUB_DIR="/usr/share/grub/themes"
 REO_DIR="$(cd $(dirname $0) && pwd)"
 
 SCREEN_VARIANTS=('1080p' '2k' '4k')
-THEME_VARIANTS=('forest' 'mojave' 'mountain' 'wave')
+THEME_VARIANTS=('forest' 'mojave' 'mountain' 'wave' 'nachoneko')
 TYPE_VARIANTS=('window' 'float' 'sharp' 'blur')
 SIDE_VARIANTS=('left' 'right')
 COLOR_VARIANTS=('dark' 'light')
@@ -306,12 +306,14 @@ run_dialog() {
       1 "Forest" on \
       2 "Mojave" off \
       3 "Mountain" off \
-      4 "Wave" off --output-fd 1 )
+      4 "Wave" off \
+      5 "NachoNeko" off --output-fd 1 )
       case "$tui" in
         1) theme="forest"     ;;
         2) theme="mojave"     ;;
         3) theme="mountain"   ;;
         4) theme="wave"       ;;
+        5) theme="nachoneko"  ;;
         *) operation_canceled ;;
      esac
 
@@ -342,7 +344,7 @@ run_dialog() {
     tui=$(dialog --backtitle ${Project_Name} \
     --radiolist "Choose your Grub theme background color variant : " 15 40 5 \
       1 "Dark" on \
-      3 "Light" off --output-fd 1 )
+      2 "Light" off --output-fd 1 )
       case "$tui" in
         1) color="dark"       ;;
         2) color="light"      ;;
